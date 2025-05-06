@@ -1,0 +1,32 @@
+# Core Python Libraries
+numpy
+pandas
+regex
+
+# OCR & PDF Extraction
+PyMuPDF==1.22.5
+pytesseract==0.3.10
+Pillow
+
+# NLP Processing
+nltk
+spacy
+scikit-learn
+
+# Transformers for Summarization
+transformers
+sentencepiece
+torch
+
+# Evaluation Metrics
+rouge-score
+bert-score
+sacrebleu
+
+# Interface Deployment
+streamlit
+ngrok
+
+# Visualization
+matplotlib
+seaborn
