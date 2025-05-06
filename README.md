@@ -94,3 +94,34 @@ The project follows a **hybrid CRISP-DM methodology**:
 These metrics validate that the model-generated summaries maintain semantic and contextual accuracy comparable to human-written summaries.
 
 
+## 🔮 Future Enhancements
+To improve scalability, accessibility, and real-world applicability, the following future enhancements are planned:
+
+🧠 Automated Rhetorical Segmentation
+Train a dedicated RSR (Rhetorical Structure Recognition) model using annotated Indian court data to replace heuristic-based segmentation with a data-driven approach.
+
+🌐 Multilingual Support
+Integrate models like IndicBERT or mBART to handle regional languages (Hindi, Tamil, Kannada, etc.), enabling broader accessibility across India.
+
+⚡ Latency Optimization
+Optimize inference time for LED and LLaMA models to support real-time use cases such as courtroom displays, judicial kiosks, and on-the-fly legal consultations.
+
+🖱️ Interactive User Interface
+Enhance the Streamlit frontend with section-wise navigation, legal term highlighting, and integrated chatbot support for querying case-specific content.
+
+📄 Document Type Expansion
+Extend coverage beyond judgments to include contracts, regulatory filings, arbitration awards, and corporate compliance documents.
+
+🧾 Adaptive Prompting
+Tailor prompt instructions dynamically based on the case type (e.g., criminal, civil, family law) to improve contextual formatting and tone of summaries.
+
+🔍 Explainability Integration
+Implement attention visualization and rationale tracing to make the model’s decisions transparent and trustworthy for legal professionals.
+
+📱 Offline & Mobile Access
+Develop lightweight, mobile-compatible deployments for resource-constrained environments, legal clinics, and rural legal aid centers.
+
+🗳️ Feedback-Driven Fine-Tuning
+Enable continuous improvement via user feedback loops, especially from legal practitioners and NGOs working in the justice domain.
+
+
