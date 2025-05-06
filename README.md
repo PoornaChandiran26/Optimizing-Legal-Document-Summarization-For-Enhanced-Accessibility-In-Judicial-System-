@@ -1,2 +1,96 @@
-# Optimizing-Legal-Document-Summarization-For-Enhanced-Accessibility-In-Judicial-System-
-An NLP pipeline for extracting, summarizing, and restructuring Indian legal judgments using transformer models (LED, Meta-LLaMA) to enhance accessibility for non-legal audiences.
+# ⚖️ Optimizing Legal Document Summarization for Enhanced Accessibility in Judicial System
+
+This project presents a complete NLP pipeline to transform complex Indian legal judgments into layperson-friendly summaries. It integrates OCR, rhetorical segmentation, transformer-based summarization (LED), and prompt-based structuring (Meta-LLaMA 8B-Instruct), aiming to bridge the gap between public access and public understanding of court documents.
+
+---
+
+## 🔍 Problem Statement
+
+While Indian court judgments are publicly available through platforms like eCourts, their structure and dense legal language make them difficult for the general public to comprehend. There is a clear gap between accessibility and readability, especially for non-legal professionals such as students, journalists, and civil society researchers.
+
+---
+
+## 🎯 Project Objectives
+
+- Extract text from scanned/digital Indian court judgments using OCR tools.
+- Segment legal content into rhetorical sections: Metadata, Facts, Arguments, Decisions.
+- Generate high-quality abstractive summaries using the LED model.
+- Restructure outputs using Meta-LLaMA into 6 clearly labeled sections:
+  - Background of the Case  
+  - Key Legal Issues  
+  - Arguments from Both Sides  
+  - Court’s Decision & Reasoning  
+  - Impact & Lessons for the Public  
+  - Important Takeaways in Simple Terms
+- Evaluate summaries using ROUGE, BLEU, and BERTScore.
+- Deploy the tool via a Streamlit interface for real-time use.
+
+---
+
+## 📦 Dataset
+
+- **Source:** Indian eCourts portal (public domain)
+- **Size:** ~1,649 PDF judgments (1GB total)
+- **Categories:**  
+  - Civil (849): land disputes, contracts, defamation, divorce, etc.  
+  - Criminal (800): murder, kidnapping, money laundering, etc.  
+- **Split:**  
+  - Train: 70%  
+  - Validation: 15%  
+  - Test: 15%  
+
+---
+
+## ⚙️ Tech Stack
+
+| Component         | Tools & Libraries                             |
+|------------------|------------------------------------------------|
+| Text Extraction   | PyMuPDF, Tesseract OCR                        |
+| Preprocessing     | spaCy, NLTK, Regex                            |
+| Summarization     | LED (Longformer Encoder-Decoder, HuggingFace) |
+| Structuring       | Meta-LLaMA 8B-Instruct                        |
+| Evaluation        | ROUGE, BLEU, BERTScore                        |
+| Interface         | Streamlit                                     |
+| Deployment        | Ngrok (via Google Colab)                      |
+| Programming       | Python                                        |
+
+---
+
+## 🧠 Methodology
+
+The project follows a **hybrid CRISP-DM methodology**:
+
+1. **Business Understanding**  
+   Bridge the gap between public legal data and non-expert comprehension.
+
+2. **Data Collection & Preparation**  
+   - 1,649 court judgments collected from eCourts.  
+   - Extracted using PyMuPDF and fallback Tesseract OCR.  
+   - Cleaned using regex and NLP libraries.  
+   - Segmented into rhetorical structures.
+
+3. **Modeling**  
+   - LED (AllenAI) used for abstractive summarization.  
+   - Meta-LLaMA 8B-Instruct used for structured generation via custom prompts.
+
+4. **Evaluation**  
+   - Evaluated with ROUGE-1, ROUGE-2, ROUGE-L, BLEU, and BERTScore across 16 test samples.  
+   - Manual reference summaries used for comparison.
+
+5. **Deployment**  
+   - Interface created using Streamlit.  
+   - Publicly accessible via Ngrok tunnel in Colab.
+
+---
+
+## 📊 Evaluation Results
+
+| Metric      | Score  |
+|-------------|--------|
+| ROUGE-L     | 0.32   |
+| BLEU        | 0.105  |
+| BERTScore   | 0.81   |
+
+These metrics validate that the model-generated summaries maintain semantic and contextual accuracy comparable to human-written summaries.
+
+
